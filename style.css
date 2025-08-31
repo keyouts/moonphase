@@ -1,0 +1,87 @@
+  body {
+      font-family: 'Courier New', monospace;
+      background: #fff;
+      color: #000;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: auto;
+      border: 4px solid black;
+      padding: 20px;
+      box-shadow: 10px 10px 0 black;
+      text-align: center;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      border-bottom: 4px solid black;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .orbit {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 20px;
+      border: 2px dashed black;
+      border-radius: 50%;
+      animation: spin 20s linear infinite;
+    }
+
+    .moon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60px;
+      height: 60px;
+      margin: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #000 60%, #fff 100%);
+      box-shadow: 4px 4px 0 black;
+      overflow: hidden;
+      transform: rotate(0deg);
+    }
+
+    .phase {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #fff;
+      mix-blend-mode: difference;
+      transform: translateX(var(--offset, 0px));
+      transition: transform 0.5s ease;
+    }
+
+    .label {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-weight: bold;
+      border: 3px solid black;
+      background: white;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 black;
+      text-transform: uppercase;
+    }
+
+    button:hover {
+      background: black;
+      color: white;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
