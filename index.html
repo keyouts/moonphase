@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Moon Phase Tracker</title>
-
-    <link rel="stylesheet" href="./style.css">
-
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Moon Phase</h1>
-    <div class="orbit">
+  <div class="container" role="main" aria-label="Moon Phase Tracker">
+    <h1 id="mainHeading">Moon Phase</h1>
+
+    <div class="orbit" aria-hidden="true">
       <div class="moon">
-        <div class="phase" id="phase"></div>
+        <div class="phase" id="phase" aria-label="Current moon phase visual representation"></div>
       </div>
     </div>
-    <div class="label" id="phaseLabel">Loading...</div>
-    <button onclick="updateMoon()">Refresh</button>
+
+    <div class="label" id="phaseLabel" role="status" aria-live="polite" aria-atomic="true">
+      Loading...
+    </div>
+
+    <button onclick="updateMoon()" aria-label="Refresh moon phase data">Refresh</button>
   </div>
 
-      <script src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
 
